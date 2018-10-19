@@ -2,7 +2,7 @@ calc
 ====
 Calculator based on lex and yacc. 
 
-##Usage
+## 1. Usage
 
 ```
 $ make
@@ -19,6 +19,6 @@ $ ./calc
 => 7.3
 ```
 
-##License
+## 2. License
 
 calc contains `khash.h` which is licensed under the terms of the MIT license. More info can be found here: http://attractivechaos.awardspace.com/khash.h.html

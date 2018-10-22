@@ -54,3 +54,16 @@ struct number NEGATE(struct number x);
 #define POW_INTEGER(x, y) NEW_INTEGER(pow(x.integer, y.integer))
 #define POW_RATIONAL(x, y) NEW_RATIONAL(pow(x.rational, y.rational))
 
+
+#define DEFINE_BINARY_OPERATION(name) \
+        struct number name(struct number x, struct number y) { \
+                if (IS_RATIONAL(x) || IS_RATIONAL(y)) { \
+                        ENSURE_RATIONAL(x); \
+                        ENSURE_RATIONAL(y); \
+                        return name##_RATIONAL(x, y); \
+                } \
+                else { \
+                        return name##_INTEGER(x, y); \
+                } \
+        }
+

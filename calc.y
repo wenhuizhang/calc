@@ -101,7 +101,7 @@ int main(int argc, const char *argv[]) {
       from_stdin = TRUE;
     } else {
       printf("ERROR: INPUT ERROR\n");
-      return 1;
+    //If an expression has syntax error, it simply prints “error”, and waits for the next input
     }
   } else if (!isatty(fileno(stdin))) {
     from_stdin = TRUE;

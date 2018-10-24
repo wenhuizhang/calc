@@ -30,7 +30,6 @@
 
 %token <num> INTEGER
 %token <num> NUMBER
-%token <num> RATIONAL
 %token <string> VARIABLE
 %token <string> ASSIGN_OP
 %token <string> LETTER

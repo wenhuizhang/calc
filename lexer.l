@@ -13,15 +13,16 @@
                             return VARIABLE;
                           }
 
-([1-9][0-9]+|[0-9])?\.[0-9]+       {
-                                    yylval.num = NEW_RATIONAL(strtod(yytext, NULL));
-                                    return RATIONAL;
-                                  }
 
 ([1-9][0-9]+|[0-9])       {
                             yylval.num = NEW_INTEGER(strtol(yytext, NULL, 10));;
                             return INTEGER;
                           }
+([1-9][0-9]+|[0-9])?\.[0-9]+ {
+                          
+                               yylval.num = NEW_NUMBER(strtod(yytext, NULL));
+                               return NUMBER;
+                             }
 
 [-+()/*\n^]              { return *yytext; }
 

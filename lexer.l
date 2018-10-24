@@ -8,7 +8,7 @@
 
 %%
 
-[a-zA-Z_][a-z]*     {
+[a-z][a-z]*     {
                             yylval.string = strdup(yytext);
                             return VARIABLE; // varaible starts with a letter, follow by lower case letters
                           }

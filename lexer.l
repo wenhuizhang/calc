@@ -8,11 +8,10 @@
 
 %%
 
-[a-zA-Z_][a-zA-Z_\d]*     {
+[a-zA-Z_][a-z]*     {
                             yylval.string = strdup(yytext);
-                            return VARIABLE;
+                            return VARIABLE; // varaible starts with a letter, follow by lower case letters
                           }
-
 
 ([1-9][0-9]+|[0-9])       {
                             yylval.num = NEW_INTEGER(strtol(yytext, NULL, 10));;

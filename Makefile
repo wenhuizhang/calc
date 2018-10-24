@@ -6,7 +6,7 @@
 LEX     = flex
 YACC    = bison -y 
 YFLAGS  = -d
-objects = calc.o lexer.o number.o
+objects = calc.o lexer.o extcalc.o
 
 
 all: $(objects)
@@ -20,7 +20,7 @@ calc.o: khash.h calc.h
 
 lexer.o: calc.h
 
-number.o: calc.h
+extcalc.o: calc.h extcalc.c
 
 .PHONY: clean
 

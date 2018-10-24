@@ -72,7 +72,7 @@ struct number get_var(char *name) {
 
   k = kh_get(str, variables, name);
 
-  // no var set. maybe we should throw an error?
+
   if (k == kh_end(variables)) return NEW_INTEGER(0);
 
   return kh_value(variables, k);
@@ -99,7 +99,7 @@ int main(int argc, const char *argv[]) {
     if (strcmp(argv[1], "-") == 0) {
       from_stdin = TRUE;
     } else {
-      printf("ERROR: INPUT ERROR\n");
+      printf("error\n");
     //If an expression has syntax error, it simply prints “error”, and waits for the next input
     }
   } else if (!isatty(fileno(stdin))) {

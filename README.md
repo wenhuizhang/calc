@@ -16,7 +16,7 @@ An interactive calculator using lex and yacc, which:
 
   - Numbers (number) are represented in decimals using digit.
 
-  - If an expression has syntax error, it simply prints “error”, and waits for the next input.
+  - If an expression has syntax error, it simply prints “syntax error”, and waits for the next input.
 
 
 ## 2. Usage
@@ -37,6 +37,8 @@ Wenhuis-MacBook-Pro:calc wenhuizhang$ ./calc
 -> 
 ```
 
+When using compare ("<=", ">=" etc.), it returns "0" for False, "1" for True. 
+ 
 
 ## 3. License
 

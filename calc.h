@@ -18,6 +18,13 @@ struct number MULTIPLY(struct number x, struct number y);
 struct number DIVIDE(struct number x, struct number y);
 struct number POW(struct number x, struct number y);
 struct number NEGATE(struct number x);
+struct number LESS(struct number x, struct number y);
+struct number LESS_EQUAL(struct number x, struct number y);
+struct number GREATER(struct number x, struct number y);
+struct number GREATER_EQUAL(struct number x, struct number y);
+struct number EQUAL(struct number x, struct number y);
+struct number NOT_EQUAL(struct number x, struct number y);
+
 
 #define IS_NUMBER(x) x.is_number == TRUE
 #define NEW_INTEGER(x) (struct number){ x, 0, FALSE }
@@ -66,4 +73,3 @@ struct number NEGATE(struct number x);
                         return name##_INTEGER(x, y); \
                 } \
         }
-

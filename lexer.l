@@ -18,16 +18,22 @@
                             return INTEGER;
                           }
 ([1-9][0-9]+|[0-9])?\.[0-9]+ {
-                          
+
                                yylval.num = NEW_NUMBER(strtod(yytext, NULL));
                                return NUMBER;
                              }
 
 [-+()/*\n^]              { return *yytext; }
 
-[=]                      { return ASSIGN_OP;}
+"<="                     { return LESS_OR_EQUAL; }
+"<"                      { return LESS_THAN; }
+">="                     { return GREATER_OR_EQUAL; }
+">"                      { return GREATER_THAN; }
+"=="                     { return EQUALS; }
+"!="                     { return NOT_EQUALS; }
+"="                      { return ASSIGN_OP; }
 
-[ \t]                     ; // skip whitespace
+[ \t]+                     ; // ignore space
 
 .                         yyerror("invalid character");
 

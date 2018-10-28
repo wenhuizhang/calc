@@ -38,7 +38,18 @@ Wenhuis-MacBook-Pro:calc wenhuizhang$ ./calc
 ```
 
 When using compare ("<=", ">=" etc.), it returns "0" for False, "1" for True. 
- 
+```
+Wenhuis-MacBook-Pro:calc wenhuizhang$ ./calc 
+-> 2 + 1
+=> 3
+-> (2+1)<=3 
+=> 1
+-> (2+1)==3        
+=> 1
+-> (2+1)!=3    
+=> 0
+-> ^C
+```
 
 ## 3. License
 

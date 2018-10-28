@@ -2,7 +2,7 @@
   #include <stdio.h>
   #include <string.h>
   #include <unistd.h>
-
+  
   #include "khash.h"
   #include "calc.h"
 
@@ -14,19 +14,19 @@
   extern int yylex(void);
   extern YY_BUFFER_STATE yy_scan_string(const char *);
   extern void yy_delete_buffer(YY_BUFFER_STATE);
-
-  void yyerror(char *);
-
   extern char* yytext;
+  void yyerror(char *);
 
   KHASH_MAP_INIT_STR(str, NUM);
   khash_t(str) *variables;
 %}
 
+
 %union {
   struct number num;
   char *string;
 };
+
 
 %token <num> INTEGER
 %token <num> NUMBER
@@ -41,9 +41,8 @@
 %token <string> LETTER
 
 
-
-
 %type <num> expr
+
 
 %left LESS_THAN
 %left LESS_OR_EQUAL
@@ -56,8 +55,8 @@
 %left '*' '/'
 %right '^'
 %left UMINUS
-
 %%
+
 
 program:
         program expr '\n'      { PRINT_NUMBER($2); }
@@ -86,16 +85,17 @@ expr:
 
 %%
 
+
 struct number get_var(char *name) {
   khiter_t k;
-
+  
   k = kh_get(str, variables, name);
-
-
+  
   if (k == kh_end(variables)) return NEW_INTEGER(0);
 
   return kh_value(variables, k);
 }
+
 
 struct number set_var(char *name, struct number value) {
   khiter_t k;
